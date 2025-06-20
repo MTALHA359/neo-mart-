@@ -41,7 +41,7 @@
 //         className="mt-16 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.08)]"
 //       >
 //         <Image
-//           src="https://images.pexels.com/photos/30750070/pexels-photo-30750070.jpeg"
+//           src="https://images.pexels.com/photos/30750070/pexels-photo-30750070.jpeg?_gl=1*piqpr2*_ga*MTU3NjA0MjQ0NS4xNzUwMzMyOTg3*_ga_8JE65Q40S6*czE3NTA0NTU1MTAkbzEwJGcxJHQxNzUwNDU1NTM4JGozMiRsMCRoMA.."
 //           alt="MartLux Grocery"
 //           width={1400}
 //           height={800}
