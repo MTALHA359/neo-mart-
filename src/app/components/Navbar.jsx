@@ -94,14 +94,15 @@ export default function Navbar({ toggleCart }) {
         </motion.button>
 
         {/* Login Button */}
-        <Link href="/login">
+        {/* <Link href="/login"> */}
+        <Link href="/sigin">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 border border-yellow-400 text-yellow-300 font-semibold rounded-lg
               hover:bg-yellow-400 hover:text-black transition duration-300"
           >
-            Login
+            sigin
           </motion.button>
         </Link>
       </div>
