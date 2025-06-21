@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa';
+import { FaSearch, FaUser } from 'react-icons/fa';
+import { ShoppingCart } from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 
-export default function Navbar() {
+export default function Navbar({ toggleCart }) {
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -45,18 +46,44 @@ export default function Navbar() {
 
       {/* ACTIONS */}
       <div className="flex items-center gap-5">
-        {[FaSearch, FaUser, FaShoppingCart].map((Icon, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-white text-xl cursor-pointer hover:text-yellow-300 transition duration-300"
-          >
-            <Tilt scale={1.05}><Icon /></Tilt>
-          </motion.div>
-        ))}
+        {/* Search Icon */}
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
+          className="text-white text-xl cursor-pointer hover:text-yellow-300 transition duration-300"
+        >
+          <Tilt scale={1.05}>
+            <FaSearch />
+          </Tilt>
+        </motion.div>
 
-        {/* BUTTONS */}
+        {/* User Icon */}
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
+          className="text-white text-xl cursor-pointer hover:text-yellow-300 transition duration-300"
+        >
+          <Tilt scale={1.05}>
+            <FaUser />
+          </Tilt>
+        </motion.div>
+
+        {/* Cart Icon (with toggleCart handler) */}
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
+          className="text-white text-xl cursor-pointer hover:text-yellow-300 transition duration-300 relative"
+        >
+          <Tilt scale={1.05}>
+            <button onClick={toggleCart}>
+              <ShoppingCart className="w-6 h-6" />
+              {/* You can add a badge here for item count */}
+              {/* <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-1 rounded-full">2</span> */}
+            </button>
+          </Tilt>
+        </motion.div>
+
+        {/* Shop Now Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -66,6 +93,7 @@ export default function Navbar() {
           Shop Now
         </motion.button>
 
+        {/* Login Button */}
         <Link href="/login">
           <motion.button
             whileHover={{ scale: 1.05 }}
